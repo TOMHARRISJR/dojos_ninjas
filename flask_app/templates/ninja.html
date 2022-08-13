@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container d-flex">
+        <div class="row">
+    <h1>New Ninja</h1>
+    <div class="col-6">
+
+        <form action="/ninjas/create/process" method="POST">
+        <label for="name">Dojo:</label>
+        <select name="dojo_id" id="">
+            {% for dojo in dojos%}
+            <option value="{{dojo.id}}">{{dojo.name}}</option>
+            {% endfor %}
+        </select>   
+        <label>First Name:</label> 
+        <input name="first_name" type="text">
+        <label>Last Name:</label>
+        <input name="last_name" type="text">
+        <label>Age:</label>
+        <input name="age" type="number">
+        <button>Create</button>
+        </form>
+        <a href="/dojos">Home</a>
+    </div>
+    
+</body>
+</html>
